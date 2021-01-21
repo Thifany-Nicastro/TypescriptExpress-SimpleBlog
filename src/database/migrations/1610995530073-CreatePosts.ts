@@ -25,7 +25,7 @@ export class CreatePosts1610995530073 implements MigrationInterface {
               isNullable: false,
             },
             {
-              name: 'user_id',
+              name: 'userId',
               type: 'uuid',
             },
             {
@@ -45,8 +45,7 @@ export class CreatePosts1610995530073 implements MigrationInterface {
       await queryRunner.createForeignKey(
         'posts',
         new TableForeignKey({
-          name: 'AppointmentProvider',
-          columnNames: ['user_id'],
+          columnNames: ['userId'],
           referencedColumnNames: ['id'],
           referencedTableName: 'users',
           onDelete: 'CASCADE'
