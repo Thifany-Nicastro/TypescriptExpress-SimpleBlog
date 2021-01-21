@@ -8,7 +8,7 @@ const postsRouter = Router();
 
 postsRouter.get('/', async (request, response) => {
   const postsRepository = getCustomRepository(PostsRepository);
-  const posts = await postsRepository.find();
+  const posts = await postsRepository.find({ relations: ["user"] });
 
   return response.json(posts);
 });
